@@ -1,0 +1,15 @@
+<!-- create_user.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar Usuário</title>
+</head>
+<body>
+    <h2>Criar Usuário</h2>
+    <form method="post" action="{% url 'index:create_user' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Criar Usuário</button>
+    </form>
+</body>
+</html>

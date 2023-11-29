@@ -1,0 +1,25 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post" action="{% url 'index:custom_login' %}">
+        {% csrf_token %}
+        <label for="username">Nome de usuário:</label>
+        <input type="text" name="username" required><br>
+        <label for="password">Senha:</label>
+        <input type="password" name="password" required><br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
